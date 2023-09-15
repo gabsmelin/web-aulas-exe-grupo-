@@ -13,7 +13,15 @@ export default function AdicionarProduto() {
         nome: '',
         preco: '',
     });
-    
+
+    //Atulizando escrita dentro do input até chegar no resultado final(escrita que irá ser adicionada na nossa lista)
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+
+        setProduto({...produtos,[name]:value})
+        console.log(produtos.nome)
+    }
+
     return(
         <div>
             <h1>Adicionar Produto</h1>
@@ -26,11 +34,11 @@ export default function AdicionarProduto() {
                         </div>
                         <div>
                             <label htmlFor="idNome">Nome:</label>
-                            <input type="text" name="nome" id="idNome"/>
+                            <input type="text" name="nome" id="idNome" value={produtos.nome}/>
                         </div>
                         <div>
                             <label htmlFor="idPreco">Preço:</label>
-                            <input type="number" name="preco" id="idPreco"/>
+                            <input type="number" name="preco" id="idPreco" value={produtos.preco}/>
                         </div>
                         <div>
                             <button onClick={handleAdd}>Adicionar</button>
