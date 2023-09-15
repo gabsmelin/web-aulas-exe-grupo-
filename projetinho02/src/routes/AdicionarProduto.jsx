@@ -6,6 +6,14 @@ import { useState } from "react";
 export default function AdicionarProduto() {
     document.title = "Adicionar Produtos";
 
+    const navigate = useNavigate();
+
+    //Criando variáveis para pegar o valor dos inputs
+    const [produtos, setProduto] = useState({
+        nome: '',
+        preco: '',
+    });
+    
     return(
         <div>
             <h1>Adicionar Produto</h1>
