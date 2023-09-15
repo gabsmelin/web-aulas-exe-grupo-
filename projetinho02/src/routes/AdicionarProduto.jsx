@@ -22,6 +22,20 @@ export default function AdicionarProduto() {
         console.log(produtos.nome)
     }
 
+     //função para adicionar os valores de fato
+     const handleAdd = (event) => {
+        //evitar que a página fique recarregando
+        event.preventDefault();
+
+        //adicionando valores passados pelo usuário nos inputs
+        ListaProdutos.push({id: ListaProdutos.length + 1, ...produtos});
+
+        alert("Produto adicionado com sucesso!");
+
+        //realizando o redirect
+        navigate('/produtos')
+    }
+
     return(
         <div>
             <h1>Adicionar Produto</h1>
@@ -34,11 +48,11 @@ export default function AdicionarProduto() {
                         </div>
                         <div>
                             <label htmlFor="idNome">Nome:</label>
-                            <input type="text" name="nome" id="idNome" value={produtos.nome}/>
+                            <input type="text" name="nome" id="idNome" value={produtos.nome} onChange={handleChange}/>
                         </div>
                         <div>
                             <label htmlFor="idPreco">Preço:</label>
-                            <input type="number" name="preco" id="idPreco" value={produtos.preco}/>
+                            <input type="number" name="preco" id="idPreco" value={produtos.preco} onChange={handleChange}/>
                         </div>
                         <div>
                             <button onClick={handleAdd}>Adicionar</button>
