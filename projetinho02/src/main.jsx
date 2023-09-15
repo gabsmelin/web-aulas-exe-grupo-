@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   { path: '/', element: <App />, 
     errorElement: <Erro404 />,
       children:[
-        { path: '/home', element: <Home />},
+        { path: '/', element: <Home />},
         { path: '/produtos', element: <Produtos />},
         { path: '/editar/produtos/:id', element: <EditarProdutos />},
         { path: '/excluir/produtos/:id', element: <ExcluirProdutos />},

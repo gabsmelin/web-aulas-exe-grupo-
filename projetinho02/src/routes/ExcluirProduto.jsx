@@ -30,7 +30,7 @@ export default function ExcluirProdutos() {
             <h1>Excluir Produtos</h1>
             <div>
                 <p>Nome do produto - {produto.nome}</p>
-                <p>Pre;o do produto - {produto.preco}</p>
+                <p>Preço do produto - {produto.preco}</p>
             </div>
             <div>
             <button onClick={handleDelete}>EXCLUIR</button>
